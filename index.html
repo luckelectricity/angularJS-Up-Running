@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-controller="Aaa"><!--C-->
+		<div>{{1+2}}</div>
+		<div>{{2+3}}</div>
+		<div>{{"name=5"}}</div>
+		<div ng-controller="Aaa">{{name}}</div><!--V-->
+		<div ng-controller="Bbb">{{name}}</div><!--V-->
+		<div>{{age}}</div>
+	</body>
+	<script type="text/javascript">
+		function Aaa($scope,$rootScope){
+			$scope.name = "hello angular";//M
+			$rootScope.age="26";
+		}
+		function Bbb($scope){
+			$scope.name = "20";//M
+		}
+	</script>
+</html>
