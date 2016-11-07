@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>hello controller</title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-controller="mainCtrl as ctrl"><!--controllerAs 分辨同一控制器的不同实例-->
+		{{ctrl.hello}} angular
+		<br>
+		{{ctrl.goodbay}} angular
+		<script type="text/javascript">
+			angular.module("notesApp",[])
+				.controller("mainCtrl",[function(){
+					this.hello="hello";
+					var goodbay="goodbay";
+				}])
+		</script>
+	</body>
+</html>

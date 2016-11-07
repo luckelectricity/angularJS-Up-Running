@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>click</title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-controller="mainCtrl as ctrl">
+		{{ctrl.hello}} angular
+		<br />
+		<button ng-click="ctrl.changeMessage()">change Message</button>
+		<script type="text/javascript">
+			angular.module("notesApp",[])
+				.controller("mainCtrl",[function(){
+					var self=this;//定义一个变量保存this
+					self.hello="hello";
+					self.changeMessage=function(){
+						self.hello="goodbye";
+					}
+				}]);
+		</script>
+	</body>
+</html>
